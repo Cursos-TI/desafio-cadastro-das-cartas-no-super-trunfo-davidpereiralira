@@ -8,6 +8,7 @@
 
 typedef struct {
     char codigo[4]; // Código da cidade com três dígitos
+    char nomeCidade[50]; // Nome da cidade
     int populacao; // População da cidade
     float area; // Área em km²
     float pib; // PIB em bilhões
@@ -20,6 +21,8 @@ int main() {
 
     // Cadastro das Cartas:
     printf("Cadastro da Carta A01\n");
+    printf("digite o nome da cidade: ");
+    scanf("%s", cartas[totalCartas].nomeCidade);
     printf("Digite a população: ");
     scanf("%d", &cartas[totalCartas].populacao);
     printf("Digite a área: ");
@@ -32,6 +35,8 @@ int main() {
     totalCartas++;
 
     printf("Cadastro da Carta A02\n");
+    printf("digite o nome da cidade: ");
+    scanf("%s", cartas[totalCartas].nomeCidade);
     printf("Digite a população: ");
     scanf("%d", &cartas[totalCartas].populacao);
     printf("Digite a área: ");
@@ -47,6 +52,7 @@ int main() {
     printf("\nExibição dos Dados das Cartas\n");
     for (int i = 0; i < totalCartas; i++) {
         printf("\nCarta %s: \n", cartas[i].codigo);
+        printf("Nome da Cidade: %s\n", cartas[i].nomeCidade);
         printf("População: %d\n", cartas[i].populacao);
         printf("Área: %.2f \n", cartas[i].area);
         printf("PIB: %.2f \n", cartas[i].pib);
